@@ -1,4 +1,4 @@
-FROM php:8.4-fpm-alpine3.24 AS root
+FROM php:8.4.27-fpm-alpine3.24 AS root
 LABEL maintainer="Thomas Bruederli <thomas@roundcube.net>"
 LABEL org.opencontainers.image.source="https://github.com/roundcube/roundcubemail-docker"
 
@@ -88,7 +88,7 @@ COPY php.ini /usr/local/etc/php/conf.d/roundcube-defaults.ini
 COPY --chmod=0755 docker-entrypoint.sh /
 
 # Define Roundcubemail version
-ARG ROUNDCUBEMAIL_VERSION=1.6.17
+ARG ROUNDCUBEMAIL_VERSION=1.6.20
 
 # Define the GPG key used for the bundle verification process
 ARG ROUNDCUBEMAIL_KEYID="F3E4 C04B B3DB 5D42 15C4  5F7F 5AB2 BAA1 41C4 F7D5"
